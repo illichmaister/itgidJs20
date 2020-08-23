@@ -36,17 +36,20 @@ document.querySelector('.b-2').onclick = f2;
 // Task 3
 // Даны 2 input - i-31 и i-32, оба - input[type=number]. При нажатии кнопки b-3 срабатывает функция f3. Функция должна вычитать содержимое i-31 и i-32 в переменные и сравнить их, вывести в  out-3 большее число.
 //     Проведите самостоятельный тест работы, введите пары чисел 4 и 9, 9 и 22, 5 и 111.
-let input03_1 = document.querySelector('.i-31');
-let input03_2 = document.querySelector('.i-32');
+
 let out03 = document.querySelector('.out-3');
 function f3() {
+    let input03_1 = +document.querySelector('.i-31').value;
+    let input03_2 = +document.querySelector('.i-32').value;
     if (input03_1 > input03_2) {
-        out03.innerHTML = input03_1.value;
+        out03.innerHTML = input03_1;
     }
     else {
-        out03.innerHTML = input03_2.value;
+        out03.innerHTML = input03_2;
+        // console.log(typeof input03_2); 
+        // косяк с типами данных, сорри
     }
-}
+};
 document.querySelector('.b-3').onclick = f3;
 
 
