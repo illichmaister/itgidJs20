@@ -108,7 +108,7 @@ function t6() {
     let input06 = document.querySelector('.i-6').value;
     let res06 = '';
     for (let i = 0; i < input06; i++) {
-        res06 += "********" + "<br>";
+        res06 += "******" + "<br>";
     }
     out06.innerHTML = res06;
 }
