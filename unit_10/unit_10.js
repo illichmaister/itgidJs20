@@ -324,7 +324,6 @@ function f16() {
         out += `${ar16_odd[i]} `;
     }
     outOdd.innerHTML = out;
-
 }
 
 
@@ -337,9 +336,21 @@ document.querySelector('.b-16').onclick = f16;
 // Вывод в out-17
 
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
+let overThree = [];
+let out17 = document.querySelector('.out-17');
 
 function f17() {
-
+    let out = '';
+    for (let i = 0; i < ar17.length; i++) {
+        if (ar17[i] > 3) {
+            overThree[overThree.length] = ar17[i];
+        }
+        console.log(overThree[0]);
+    }
+    for (let i = 0; i < overThree.length; i++) {
+        out += overThree[i] + ' ';
+    }
+    out17.innerHTML = out;
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -352,9 +363,20 @@ document.querySelector('.b-17').onclick = f17;
 // Вывод в out-18
 
 let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
+let out18 = document.querySelector('.out-18');
+let max = ar18[0];
 
 function f18() {
-
+    let out = '';
+    let i = 0;
+    while (i < ar18.length) {
+        if (ar18[i] > max) {
+            max = ar18[i];
+        }
+        out = max;
+        i++;
+    }
+    out18.innerHTML = out;
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -367,8 +389,17 @@ document.querySelector('.b-18').onclick = f18;
 // Вывод в out-19
 
 let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
+let min = ar19[0];
+let out19 = document.querySelector('.out-19');
 
 function f19() {
+    let out = '';
+    for (let i = 0; i < ar19.length; i++) {
+        if (min > ar19[i]) {
+            min = ar19[i];
+        }
+    }
+    out19.innerHTML = min;
 
 }
 
@@ -381,9 +412,16 @@ document.querySelector('.b-19').onclick = f19;
 // Вывод в out-20
 
 let ar20 = [4, 5, 6, 7, 8, 9, 10];
+let sum = 0;
+let out20 = document.querySelector('.out-20');
 
 function f20() {
-
+    let i = 0;
+    while (i < ar20.length) {
+        sum = sum + ar20[i];
+        i++;
+    }
+    out20.innerHTML = sum;
 }
 
 document.querySelector('.b-20').onclick = f20;
