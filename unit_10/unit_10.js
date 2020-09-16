@@ -127,7 +127,7 @@ function f8() {
     let out = '';
     let i = 0;
     while (i < ar8.length) {
-        out += `${ar8[i]} `;
+        out += `${ar8[i]}-`;
         i++;
     }
     document.querySelector('.out-8').innerHTML = out;
@@ -336,23 +336,31 @@ document.querySelector('.b-16').onclick = f16;
 // Вывод в out-17
 
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
-let overThree = [];
+// let overThree = [];
 let out17 = document.querySelector('.out-17');
 
 function f17() {
-    let out = '';
+    // let out = '';
+    // for (let i = 0; i < ar17.length; i++) {
+    //     if (ar17[i] > 3) {
+    //         overThree[overThree.length] = ar17[i];
+    //     }
+    //     console.log(overThree[0]);
+    // }
+    // for (let i = 0; i < overThree.length; i++) {
+    //     out += overThree[i] + ' ';
+    // }
+    // out17.innerHTML = out;
+
+    let out = 0;
     for (let i = 0; i < ar17.length; i++) {
         if (ar17[i] > 3) {
-            overThree[overThree.length] = ar17[i];
+            out = out + 1;
         }
-        console.log(overThree[0]);
-    }
-    for (let i = 0; i < overThree.length; i++) {
-        out += overThree[i] + ' ';
-    }
-    out17.innerHTML = out;
-}
+        out17.innerHTML = out;
 
+    }
+}
 document.querySelector('.b-17').onclick = f17;
 
 
@@ -364,9 +372,10 @@ document.querySelector('.b-17').onclick = f17;
 
 let ar18 = [15, 24, 13, 78, 21, 4, 45, 67];
 let out18 = document.querySelector('.out-18');
-let max = ar18[0];
+
 
 function f18() {
+    let max = ar18[0];
     let out = '';
     let i = 0;
     while (i < ar18.length) {
@@ -380,6 +389,8 @@ function f18() {
 }
 
 document.querySelector('.b-18').onclick = f18;
+ar18 = [1, 3, 7];
+f18();
 
 
 // Task 19
@@ -390,17 +401,17 @@ document.querySelector('.b-18').onclick = f18;
 
 let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
 let min = ar19[0];
+let index = 0;
 let out19 = document.querySelector('.out-19');
 
 function f19() {
-    let out = '';
     for (let i = 0; i < ar19.length; i++) {
         if (min > ar19[i]) {
             min = ar19[i];
+            index = i;
         }
     }
-    out19.innerHTML = min;
-
+    out19.innerHTML = index;
 }
 
 document.querySelector('.b-19').onclick = f19;
