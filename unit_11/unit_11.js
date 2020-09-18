@@ -364,7 +364,7 @@ document.querySelector('.b-19').onclick = f19;
 let d20 = [4, 5, 6, 7, 8, 9, 10];
 let out20 = document.querySelector('.out-20');
 function f20() {
-    out20.innerHTML = d20.join("''");
+    out20.innerHTML = d20.join('');
     // console.log(typeof (d20.join("''")));
 }
 
