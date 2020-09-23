@@ -1,0 +1,94 @@
+body{margin: 0px;
+    margin: 0px;
+    background: url(/unit_14/img/les.jpg) no-repeat;
+    background-size: cover;
+  }
+.wrapper{
+    height: 100%;
+    overflow: hidden;
+    min-height: 100%;
+    padding: 50px;
+}
+.block__row {
+    height: 100vh;
+    margin: 0px 0px 0px 0px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block__item{
+    background-color: rgba(255, 255, 232, 0.88);
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(43, 43, 43);
+    width: 300px;
+    text-align: center;
+    border-radius: 5%;
+    border: 1px solid rgb(38, 11, 102);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.selector{
+    height: 80px;
+}
+
+.city__form {
+    margin: 25px;
+}
+.weatherBack{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.num {
+    font-size: 25;
+    font-weight: 700;
+}
+
+.str {
+    margin: 25px;
+}
+.icon {
+    background-color: #c0c0c0;
+    border-radius: 50%;
+    height: 100px;
+}
+
+.temp {
+        margin-top: 0;
+        
+}
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px; 
+  }
+  
+  .custom-dropdown select {
+    cursor: pointer;
+    background-color: #444444bb;
+    /* height: 80px; */
+    color: rgb(255, 255, 255);
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 2.5em;	
+    border: 0;
+    /* margin: 0; */
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button;
+  }
+  
+  .custom-dropdown::before,
+  .custom-dropdown::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    /* cursor: pointer; */
+  }
+  
