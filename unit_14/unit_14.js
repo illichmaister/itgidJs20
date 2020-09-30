@@ -9,7 +9,7 @@ function city() {
 
 
 function fetchWeather(cityCode) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?id=${cityCode}&appid=ca194fe7aa51dac5ad27b1f99d79a628`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?&lang=ru&id=${cityCode}&appid=ca194fe7aa51dac5ad27b1f99d79a628`)
         .then(function (resp) { return resp.json() })
         .then(function (data) {
             console.log(data);

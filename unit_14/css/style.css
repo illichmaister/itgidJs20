@@ -1,6 +1,6 @@
 body{margin: 0px;
     margin: 0px;
-    background: url(/unit_14/img/les.jpg) no-repeat;
+    background: url(../img/les.jpg) no-repeat;
     background-size: cover;
   }
 .wrapper{
@@ -51,7 +51,7 @@ body{margin: 0px;
     margin: 25px;
 }
 .icon {
-    background-color: #c0c0c0;
+    background-color: #b2e0c4;
     border-radius: 50%;
     height: 100px;
 }
