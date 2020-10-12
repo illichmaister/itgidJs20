@@ -32,7 +32,10 @@ document.querySelector('.b-2').onclick = f2;
 let s3 = new Set(['one', 'two', 'four']); // обратите внимание, как просто можно добавить массив в набор!
 
 const f3 = () => {
-
+    let i3 = document.querySelector('.i-3').value;
+    if (s3.has(i3)) {
+        s3.delete(i3);
+    }
     console.log(s3);
 }
 
@@ -46,8 +49,10 @@ let s4 = new Set(['a', 'b', 'c', 'z']);
 
 const f4 = () => {
     let i4 = document.querySelector('.i-4').value;
-    console.log(s4.has(i4));
-
+    if (s4.has(i4)) {
+        console.log('true');
+    }
+    else { console.log('false') }
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -55,11 +60,12 @@ document.querySelector('.b-4').onclick = f4;
 // Task 5
 //  При нажатии b-5 выполняете функцию f5. Функция должна вывести в out-5 количество элементов в наборе s5.
 
-
 let s5 = new Set(['a', 'b', 'c', 'z', 'a2', 'b2', 'c2', 'z2']);
 
 const f5 = () => {
-    console.log(s5.size);
+    let out05 = document.querySelector('.out-5');
+    out05.textContent = s5.size;
+    // console.log(s5);
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -71,7 +77,7 @@ let a6 = [1, 2, 3, 4, 5, 3, 4, 5, 2, 4, 5, 3, 24, 5, 2, 4, 56, 4, 3, 2, 335, 2, 
 
 const f6 = () => {
     let s6 = new Set(a6);
-    console.log(s6.size);
+    document.querySelector('.out-6').innerHTML = s6.size;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -91,9 +97,6 @@ const f7 = () => {
     else {
         out7.innerHTML = 0;
     }
-
-
-
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -103,19 +106,17 @@ document.querySelector('.b-7').onclick = f7;
 
 let s8 = new Set([1, 2, 3, 4, 5, 3, 4, 7, 9, 5, 7, 8, 9, 23, 45, 5, 2, 4, 5, 3, 24, 5, 2, 4, 56, 4, 3, 2, 335, 2, 23, 41, 3, 4, 1, 1, 4, 2, 2, 4, 5, 24, 5, 3, 22, 56]);
 let ar8 = [];
-let arr8 = [];
 
 const f8 = () => {
+    ar8 = [];
     for (let item of s8) {
-        // console.log(item);
-
-        if (item <= 5) {
-            // console.log(item);
-            s8.delete(item);
+        if (item > 5) {
+            ar8.push(item);
         }
     }
-    ar8 = Array.from(s8);
+
     console.log(ar8);
+
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -127,12 +128,7 @@ document.querySelector('.b-8').onclick = f8;
 
 const f9 = our_set => {
     let ar9 = Array.from(our_set);
-    let out = '';
-
-    for (let i = 0; i < ar9.length; i++) {
-        out += `${ar9[i]}_`;
-    }
-    return out;
+    return ar9.join(' ');
 }
 
 document.querySelector('.b-9').onclick = () => {
@@ -143,7 +139,15 @@ document.querySelector('.b-9').onclick = () => {
 // Task 10
 // При нажатии b-10 выполняете функцию f10. Функция должна принимать набор set в качестве параметра и выводить его в указанный элемент. Элемент указывается как второй параметр функции f10. Вывод значений - через пробел.
 
-const f10 = (out_set, elem) => { }
+const f10 = (out_set, elem) => {
+    let out = '';
+    let ar09 = Array.from(out_set);
+    for (let i = 0; i < ar09.length; i++) {
+        out += `${ar09[i]} `;
+    }
+
+    document.querySelector(elem).innerHTML = out;
+}
 
 document.querySelector('.b-10').onclick = () => {
     let a10 = new Set(['4', '5', '6']);
@@ -170,6 +174,9 @@ document.querySelector('.b-11').onclick = f11;
 let str12 = 'The name conjures up visions of plum pudding and Christmas punch quaint coaching inns and cozy firesides but also of orphaned and starving children';
 
 const f12 = () => {
+    let s12 = new Set(str12);
+
+    return s12;
 
 }
 
@@ -186,8 +193,17 @@ let str13 = 'The name conjures up visions of plum pudding and Christmas punch qu
 
 
 const f13 = () => {
+    let s13 = new Set(str13);
+    let ar13 = [];
+    for (let item of s13) {
+        let count = 0;
+        for (let i = 0; i < str13.length; i++) {
+            if (item === str13[i]) count++;
+        }
+        ar13[item] = count;
+    }
 
-    // return
+    return ar13;
 }
 
 document.querySelector('.b-13').onclick = () => {
