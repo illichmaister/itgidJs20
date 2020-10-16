@@ -1,13 +1,12 @@
 // Task 1
-//При нажатии .b-1 выполняете функцию f1. Функция перебирает массив a1  c помощью цикла for (let i. Выведите на страницу в .out-1 формате значение+пробел.
+//При нажатии .b-1 выполняете функцию f1. Функция перебирает массив a1  c помощью цикла for. Выведите на страницу в .out-1 формате значение+пробел.
 
-let a1 = [5, 7, 9, 11, 13, 15];
-
+const a1 = [5, 7, 9, 11, 13, 15];
 function f1() {
     let out01 = document.querySelector('.out-1');
     let out = '';
-    for (let i = 0; i < a1.length; i++) {
-        out += `${a1[i]} `;
+    for (let item of a1) {
+        out += `${item} `;
     }
     out01.textContent = out;
 }
@@ -15,13 +14,12 @@ function f1() {
 document.querySelector('.b-1').addEventListener('click', f1);
 
 // Task 2
-//При нажатии .b-2 выполняете функцию f2. Функция перебирает массив a2  c помощью цикла for (let i. Выведите на страницу в .out-2 формате индекс+пробел+значение+пробел.
+//При нажатии .b-2 выполняете функцию f2. Функция перебирает массив a2  c помощью цикла for. Выведите на страницу в .out-2 формате индекс+пробел+значение+пробел.
 
-let a2 = [5, 7, 9, 11, 13, 15];
+const a2 = [5, 7, 9, 11, 13, 15];
 
 function f2() {
     let out02 = document.querySelector('.out-2');
-    // out02.textContent = '';
     let out = '';
     for (let i = 0; i < a2.length; i++) {
         out += `${i} ${a2[i]} `;
@@ -31,14 +29,19 @@ function f2() {
 
 document.querySelector('.b-2').addEventListener('click', f2);
 
+
 // Task 3
 //При нажатии .b-3 выполняете функцию f3. Функция получает div.out-3 со страницы с помощью getElementsByClassName и в каждый записывает число 3, перезаписывая содержимое div.
+
 
 function f3() {
     let div03 = document.getElementsByClassName('out-3');
     for (let item of div03) {
         item.textContent = '3';
     }
+
+    // console.log(div03);
+
 }
 
 document.querySelector('.b-3').addEventListener('click', f3);
@@ -46,11 +49,12 @@ document.querySelector('.b-3').addEventListener('click', f3);
 
 // Task 4
 //При нажатии .b-4 выполняете функцию f4. Функция получает div.out-4 со страницы с помощью querySelectorAll и в каждый дописывает число 4.
+// fixed
 
 function f4() {
     let div04 = document.querySelectorAll('.out-4');
     for (let i = 0; i < div04.length; i++) {
-        // console.log(i);
+        console.log(i);
         div04[i].innerHTML += '4';
     }
 }
@@ -58,27 +62,26 @@ function f4() {
 document.querySelector('.b-4').addEventListener('click', f4);
 
 // Task 5
-//При нажатии .b-5 выполняете функцию f5. Функция должна с помощью for of перебрать массив a5 и возвратить новый массив куда входят элементы из a5 большие 7.
-
-let a5 = [3, 4, 5, 2, 1, 7, 8, 2, 4, 6, 8, 11, 23, 17];
+//При нажатии .b-5 выполняете функцию f5. Функция должна: 1. Получить все div.out-5 со страницы в массив a5. 2. Cоздать новые div.out-5 через createElement. Добавить с помощью push созданный div в массив a5.
+// Поскольку для коллекций push запрещен - то данная операция должна вызывать ошибку. Убедитесь в этом. Чтобы экранировать ошибку и не дать ей влиять на работу документа в целом, применим try, catch.
 
 function f5() {
-    // let max = 0;
-    let aMax = [];
-    for (let key of a5) {
-        // console.log(key);
-        if (key > 7) {
-            aMax.push(key);
-        }
+    let a5 = document.querySelectorAll('.out-5');
+    let s = document.createElement('div');
+    s.classList.add('.out-5');
+    s.textContent = 'out-5';
+    try {
+        a5.push(s);
 
     }
-    // console.log(aMax);
-    return aMax;
+    catch (error) {
+        // если будет ошибка - то просто сообщим об этом в консоль, но код продолжит работать
+        console.log(error);
+    }
+    console.log('already work');
 }
 
-document.querySelector('.b-5').addEventListener('click', () => {
-    document.querySelector('.out-5').innerHTML = f5();
-});
+document.querySelector('.b-5').addEventListener('click', f5);
 
 // Task 6
 //При нажатии .b-6 выполняете функцию f6. Функция должна превратить массив a6 в одномерный. Результат вывести в out-6 через пробел.
@@ -95,13 +98,11 @@ function f6() {
         }
     }
     out06.textContent = out;
-
 }
-
 document.querySelector('.b-6').addEventListener('click', f6);
 
 // Task 7
-//При нажатии .b-7 выполняете функцию f7. Функция должна переиндексировать массив a7. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные объекты. Вам необходимо сделать из a7 объект, где ключи - значения id из вложенных массивов, а значения - имя (т.е { 23 : Ivan, 45 : Petr}. Функция должна возвращать результирующий массив.
+//При нажатии .b-7 выполняете функцию f7. Функция должна переиндексировать массив a7. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные объекты. Вам необходимо сделать из a7 объект, где ключи - значения id из вложенных массивов, а значения - имя (т.е { 23 : Ivan, 45 : Petr}
 
 let a7 = [{ id: 23, name: 'Ivan' }, { id: 45, name: 'Petr' }];
 
@@ -112,16 +113,16 @@ function f7() {
         // console.log(a7[i]);
         newa7[a7[i]['id']] = a7[i]['name'];
     }
-    return newa7;
+    a7 = newa7;
+    console.log(a7);
+
 }
 
-document.querySelector('.b-7').addEventListener('click', () => {
-    console.log(f7());
-});
+document.querySelector('.b-7').addEventListener('click', f7);
 
 
 // Task 8
-//При нажатии .b-8 выполняете функцию f8. Функция должна переиндексировать массив a8. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные объекты. Вам необходимо сделать из a8 массив, который будет содержать только числовые id. Т.е. [23, 45]. Функция должна возвращать результирующий массив.
+//При нажатии .b-8 выполняете функцию f8. Функция должна переиндексировать массив a8. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные объекты. Вам необходимо сделать из a8 массив, который будет содержать только числовые id. Т.е. [ 23, 45].
 
 let a8 = [{ id: 23, name: 'Ivan' }, { id: 45, name: 'Petr' }];
 
@@ -136,14 +137,12 @@ function f8() {
     return newa8;
 }
 
-document.querySelector('.b-8').addEventListener('click', () => {
-    console.log(f8());
-});
+document.querySelector('.b-8').addEventListener('click', f8);
 
 // Task 9
-//При нажатии .b-9 выполняете функцию f9. Функция должна возвращать в out-9 самый большой индекс из вложенных в a9 массивов. В данном случае это 4. Т.е. самый большой вложенный массив это [0,0,0,0,0], а в нем самый большой индекс 4.
+//При нажатии .b-9 выполняете функцию f9. Функция должна выводить в out-9 самый большой индекс вложенных массивов в массив a9. В данном случае это 4.
 
-let a9 = [[4, 3, 2], [2, 5], [0, 0, 0, 0, 0]];
+let a9 = [[4, 3, 2], [2, 5, 2, 5, 2, 5, 2, 5,], [0, 0, 0, 0, 0]];
 let out09 = document.querySelector('.out-9');
 function f9() {
     let index = 0;
@@ -153,13 +152,10 @@ function f9() {
             index = item.length - 1;
         }
     }
-    return index;
+    out09.innerHTML = index;
 }
 
-
-document.querySelector('.b-9').addEventListener('click', () => {
-    document.querySelector('.out-9').innerHTML = f9();
-});
+document.querySelector('.b-9').addEventListener('click', f9);
 
 // Task 10
 //При нажатии .b-10 выполняете функцию f10. Функция должна преобразовывать массив a10 в ассоциативный массив вида {4: 4, 6: 6, 9: 9, hello : "hello"} и возвращать полученный массив.
@@ -210,13 +206,14 @@ function f12() {
         out += `${item} `;
     }
     out12.textContent = out;
+
 }
 
 document.querySelector('.b-12').addEventListener('click', f12);
 
 
 // Task 13
-//При нажатии .b-13 выполняете функцию f13. Функция должна c помощью for of перебрать a13 и вывести по символу в out-13 через пробел.
+//При нажатии .b-13 выполняете функцию f13. Функция должна c помощью for of перебрать a13 и вывести по символам в out-13 через пробел.
 
 let a13 = 'testone';
 let out13 = document.querySelector('.out-13');
