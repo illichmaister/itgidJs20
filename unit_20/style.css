@@ -1,0 +1,102 @@
+.container  {
+    width: 100%;
+}
+
+section {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #444;
+}
+
+.block {
+    width: 75px;
+    height: 75px;
+    margin: 25px;
+    border: 2px solid #333;
+}
+
+.active {
+    background: orange;
+}
+
+.hide {
+    display: none;
+}
+.kbrd {
+  margin: 0 auto;
+}
+
+.keyboard-base {
+  max-width: 1085px;
+  padding: 20px;
+  margin: 30px auto;
+
+  background-color: rgb(197, 197, 197);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(30, 30px);
+  grid-template-rows: repeat(5, 60px);
+  grid-gap: 5px;
+}
+.key {
+  background-color: rgb(243, 243, 243);
+  border: 2px solid black;
+  border-radius: 5px;
+  grid-column: span 2;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.key:hover {
+  border: 4px solid #2c2c2c;
+  background-color: rgb(240, 240, 240);
+  
+}
+.pushed {
+  color: rgb(11, 0, 32);
+  font-weight: 700;
+  background: slategray;
+  border: 3px solid black;
+}
+.delete {
+    grid-column: span 4;
+}
+
+.tab {
+    grid-column: span 3;
+}
+
+.backslash {
+    grid-column: span 3;
+}
+
+.capslock {
+    grid-column: span 4;
+}
+
+.return {
+    grid-column: span 4;
+}
+
+.leftshift {
+    grid-column: span 5;
+}
+
+.rightshift {
+    grid-column: span 5;
+}
+
+.leftctrl {
+    grid-column: span 4;
+}
+
+
+
+.space {
+    grid-column: span 16;
+}
+
+.rightctrl {
+  grid-column: span 4;
+}
