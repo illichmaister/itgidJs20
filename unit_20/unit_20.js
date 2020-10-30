@@ -185,7 +185,7 @@ document.querySelector('.i-10').onkeyup = t10;
 
 function t11(event) {
     let key = document.querySelectorAll('.key');
-
+    console.log(event.code)
     for (let i = 0; i < key.length; i++) {
 
         key[i].classList.remove('pushed');
