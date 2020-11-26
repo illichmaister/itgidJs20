@@ -1,0 +1,54 @@
+html, body {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Mallanna', sans-serif;
+
+
+}
+
+nav ul li {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+.box {
+    border-radius: 4px;
+    min-width: calc(22% - 28px);
+    min-height: 140px;
+    float: left;
+    padding: 0 10px;
+    margin: 15px;
+    border-width: 3px;
+}
+.box.alizarin{
+    border: 3px solid #e74c3c;
+}
+.box.wisteria{
+    border: 3px solid #8e44ad;
+}
+.box.emerald{
+    border: 3px solid #2ecc71;
+}
+.box.sunflower{
+    border: 3px solid #f1c40f;
+}
+.text-alizarin{
+    color:  #e74c3c;
+}
+.text-wisteria{
+    color:  #8e44ad;
+}
+.text-emerald{
+    color:  #2ecc71;
+}
+.text-sunflower{
+    color:  #f1c40f;
+}
