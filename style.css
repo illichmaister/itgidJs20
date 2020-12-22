@@ -6,14 +6,13 @@ body {
     background-color: #000;
     color: #fff;
     font-family: 'Mallanna', sans-serif;
-
-
 }
 
 nav ul li {
     display: inline-block;
     cursor: pointer;
     margin: 0 5px;
+    
 }
 .container {
     max-width: 1200px;
@@ -28,27 +27,67 @@ nav ul li {
     margin: 15px;
     border-width: 3px;
 }
-.box.alizarin{
+.box.red{
     border: 3px solid #e74c3c;
 }
-.box.wisteria{
+.box.violet{
     border: 3px solid #8e44ad;
 }
 .box.emerald{
     border: 3px solid #2ecc71;
 }
-.box.sunflower{
+.box.yellow{
     border: 3px solid #f1c40f;
 }
-.text-alizarin{
+.text-red{
     color:  #e74c3c;
 }
-.text-wisteria{
+.text-violet{
     color:  #8e44ad;
 }
 .text-emerald{
     color:  #2ecc71;
 }
-.text-sunflower{
+.text-yellow{
     color:  #f1c40f;
+}
+.hide{
+    animation-name: a1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes a1{
+    to {
+        opacity: 0;
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+}
+
+.show{
+    animation-name: a2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes a2{
+    from {
+        opacity: 0;
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+    to {
+    opacity: 1;
+    min-width: calc(22% - 28px);
+    min-height: 140px;
+    padding: 0 10px;
+    margin: 15px;
+    border-width: 3px;
+    }
 }

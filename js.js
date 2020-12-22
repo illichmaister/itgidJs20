@@ -1,20 +1,33 @@
-let navigation = document.querySelectorAll("li");
-function capital() {
-    console.log(navigation);
+function capital(navigation) {
     for (let i = 0; i < navigation.length; i++) {
-        console.log(navigation[i].innerText);
-        let capitalized = navigation[i].innerText.toUpperCase();
-
+        navigation[i].innerText =
+            navigation[i].innerText.toUpperCase();
     }
-
 }
-capital();
+capital(document.querySelectorAll("li"));
 
 const filterBox = document.querySelectorAll('.box');
-document.querySelector('nav').addEventListener('click', (event) => {
+document.querySelector('nav').addEventListener('click', event => {
+    let filterClass = event.target.dataset['f'];
     if (event.target.tagName !== 'LI') {
         return false;
     }
-    let filterClass = event.target.dataset['f'];
-    console.log(filterClass);
+    else if (filterClass == 'all') {
+        filterBox.forEach(elem => {
+            // console.log(elem.classList);
+            if (elem.classList.contains("hide")) {
+                elem.classList.remove('hide');
+                elem.classList.add('show')
+            }
+        })
+    }
+    else {
+        filterBox.forEach(elem => {
+            elem.classList.remove('hide');
+            elem.classList.remove('show');
+            if (!elem.classList.contains(filterClass) /*&& filterClass !== "all"*/) {
+                elem.classList.add('hide')
+            }
+        })
+    }
 });
